@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: python:3.9-alpine
-        options: --platform=linux/386
+      options: --platform=linux/386
     steps:
       - name: Run on i386 docker
         run: |
