@@ -6,6 +6,17 @@ on:
   pull_request:
 
 jobs:
+  x86-test:
+    runs-on: ubuntu-latest
+    container: python@sha256:f71a4cc0e487636edb1e260674f0cd02b31dd6d7a1567244514683b2653e65e0
+    steps:
+      - name: Run on i386 docker
+        run: |
+          import sys
+          import struct
+          print('pointer size: {:d}'.format(struct.calcsize('P') * 8))
+          print(f'sys.maxsize: {sys.maxsize}')
+        shell: python
   test:
     strategy:
       fail-fast: true
