@@ -9,7 +9,7 @@ jobs:
   x86-test:
     runs-on: ubuntu-latest
     container:
-      image: python:3.9-alpine #python@sha256:f71a4cc0e487636edb1e260674f0cd02b31dd6d7a1567244514683b2653e65e0
+      image: python:3.9-alpine
         options: --platform=linux/386
     steps:
       - name: Run on i386 docker
